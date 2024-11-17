@@ -5,91 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Our Plans - BreadCorp Insurance</title>
     <link rel="stylesheet" href="styles.css">
-    <style>
-        /* Add styles for better formatting */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f7f3e9; /* Beige background */
-            color: #333;
-        }
-
-        header, footer {
-            background-color: #d8c3a5;
-            text-align: center;
-            padding: 10px;
-        }
-
-        nav {
-            text-align: center;
-            padding: 10px 0;
-            background-color: #ede0d4;
-        }
-
-        nav a {
-            margin: 0 10px;
-            text-decoration: none;
-            color: #6d4c41;
-            font-weight: bold;
-        }
-
-        h1, h2 {
-            margin: 20px 0;
-        }
-
-        section {
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-            padding: 20px;
-        }
-
-        .plan {
-            background: #fff;
-            border: 1px solid #ccc;
-            border-radius: 8px;
-            padding: 15px;
-            margin: 10px;
-            width: 23%;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-
-        .plan h3 {
-            text-align: center;
-            color: #6d4c41;
-        }
-
-        .plan p {
-            font-size: 14px;
-            margin: 10px 0;
-        }
-
-        .plan form {
-            text-align: center;
-        }
-
-        .plan form input[type="text"], 
-        .plan form input[type="submit"] {
-            margin: 5px 0;
-            padding: 8px;
-            border-radius: 4px;
-            border: 1px solid #ccc;
-            width: 90%;
-        }
-
-        .plan form input[type="submit"] {
-            background-color: #6d4c41;
-            color: #fff;
-            font-weight: bold;
-            cursor: pointer;
-        }
-
-        footer p {
-            margin: 0;
-            font-size: 12px;
-        }
-    </style>
 </head>
 <body>
     <header>
@@ -106,13 +21,12 @@
 
     <h2>Our Plans</h2>
     <section>
-        <!-- Plan 1: Wood -->
+        <!-- Wood Plan -->
         <div class="plan">
             <h3>Wood Tier</h3>
             <p>The basic package with unenchanted armor. Perfect for new adventurers.</p>
             <p><strong>Price:</strong> 15 Diamonds</p>
             <form id="wood-form">
-                <input type="hidden" name="plan" value="Wood">
                 <label for="wood-ign">In-Game Name (IGN):</label>
                 <input type="text" id="wood-ign" name="ign" required>
                 <label for="wood-location">Delivery Location:</label>
@@ -121,13 +35,12 @@
             </form>
         </div>
 
-        <!-- Plan 2: Iron -->
+        <!-- Iron Plan -->
         <div class="plan">
             <h3>Iron Tier</h3>
-            <p>Armor with Protection 4 and Unbreaking 3. Reliable and tough.</p>
+            <p>Basic enchanted armor with Protection IV and Unbreaking III.</p>
             <p><strong>Price:</strong> 35 Diamonds</p>
             <form id="iron-form">
-                <input type="hidden" name="plan" value="Iron">
                 <label for="iron-ign">In-Game Name (IGN):</label>
                 <input type="text" id="iron-ign" name="ign" required>
                 <label for="iron-location">Delivery Location:</label>
@@ -136,32 +49,60 @@
             </form>
         </div>
 
-        <!-- Plan 3: Diamond -->
+        <!-- Diamond Plan -->
         <div class="plan">
             <h3>Diamond Tier</h3>
-            <p>Perfect armor, Elytra, rockets, and food. Everything you need.</p>
+            <p>Perfect armor, Elytra, rockets, and food. Includes customization options.</p>
             <p><strong>Price:</strong> 80 Diamonds</p>
             <form id="diamond-form">
-                <input type="hidden" name="plan" value="Diamond">
                 <label for="diamond-ign">In-Game Name (IGN):</label>
                 <input type="text" id="diamond-ign" name="ign" required>
                 <label for="diamond-location">Delivery Location:</label>
                 <input type="text" id="diamond-location" name="location" required>
+                <label for="diamond-thorns">Thorns on Armor:</label>
+                <select id="diamond-thorns" name="thorns">
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select>
+                <label for="diamond-knockback">Knockback 2 on Sword:</label>
+                <select id="diamond-knockback" name="knockback">
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select>
+                <label for="diamond-fireaspect">Fire Aspect 2 on Sword:</label>
+                <select id="diamond-fireaspect" name="fireaspect">
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select>
                 <input type="submit" value="Buy Plan">
             </form>
         </div>
 
-        <!-- Plan 4: Netherite -->
+        <!-- Netherite Plan -->
         <div class="plan">
             <h3>Netherite Tier</h3>
-            <p>Everything in the Diamond Tier, but fully upgraded with Netherite gear.</p>
+            <p>Perfect Netherite armor, Elytra, rockets, and food. Includes customization options.</p>
             <p><strong>Price:</strong> 140 Diamonds</p>
             <form id="netherite-form">
-                <input type="hidden" name="plan" value="Netherite">
                 <label for="netherite-ign">In-Game Name (IGN):</label>
                 <input type="text" id="netherite-ign" name="ign" required>
                 <label for="netherite-location">Delivery Location:</label>
                 <input type="text" id="netherite-location" name="location" required>
+                <label for="netherite-thorns">Thorns on Armor:</label>
+                <select id="netherite-thorns" name="thorns">
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select>
+                <label for="netherite-knockback">Knockback 2 on Sword:</label>
+                <select id="netherite-knockback" name="knockback">
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select>
+                <label for="netherite-fireaspect">Fire Aspect 2 on Sword:</label>
+                <select id="netherite-fireaspect" name="fireaspect">
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select>
                 <input type="submit" value="Buy Plan">
             </form>
         </div>
@@ -171,27 +112,7 @@
         <p>&copy; 2024 BreadCorp Insurance. All rights reserved.</p>
     </footer>
 
-    <script>
-        document.querySelectorAll("form").forEach(form => {
-            form.addEventListener("submit", function (event) {
-                event.preventDefault();
-
-                const ign = this.querySelector("[name='ign']").value;
-                const location = this.querySelector("[name='location']").value;
-                const plan = this.querySelector("[name='plan']").value;
-
-                const nzDate = new Date().toLocaleString("en-NZ", { timeZone: "Pacific/Auckland" });
-                const orders = JSON.parse(localStorage.getItem("orders")) || [];
-                const orderNumber = orders.length + 1;
-                const uniqueId = `Order-${orderNumber}-${nzDate}`;
-
-                const newOrder = { uniqueId, ign, location, plan, orderNumber, date: nzDate };
-                orders.push(newOrder);
-                localStorage.setItem("orders", JSON.stringify(orders));
-
-                alert(`Order placed! ID: ${uniqueId}`);
-            });
-        });
-    </script>
+    <!-- Link to external JavaScript -->
+    <script src="scripts.js"></script>
 </body>
 </html>
