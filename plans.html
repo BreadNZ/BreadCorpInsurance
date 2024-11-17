@@ -3,135 +3,195 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BreadCorp Insurance</title>
+    <title>Our Plans - BreadCorp Insurance</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Add styles for better formatting */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f3e9; /* Beige background */
+            color: #333;
+        }
+
+        header, footer {
+            background-color: #d8c3a5;
+            text-align: center;
+            padding: 10px;
+        }
+
+        nav {
+            text-align: center;
+            padding: 10px 0;
+            background-color: #ede0d4;
+        }
+
+        nav a {
+            margin: 0 10px;
+            text-decoration: none;
+            color: #6d4c41;
+            font-weight: bold;
+        }
+
+        h1, h2 {
+            margin: 20px 0;
+        }
+
+        section {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            padding: 20px;
+        }
+
+        .plan {
+            background: #fff;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 10px;
+            width: 23%;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .plan h3 {
+            text-align: center;
+            color: #6d4c41;
+        }
+
+        .plan p {
+            font-size: 14px;
+            margin: 10px 0;
+        }
+
+        .plan form {
+            text-align: center;
+        }
+
+        .plan form input[type="text"], 
+        .plan form input[type="submit"] {
+            margin: 5px 0;
+            padding: 8px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            width: 90%;
+        }
+
+        .plan form input[type="submit"] {
+            background-color: #6d4c41;
+            color: #fff;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 12px;
+        }
+    </style>
 </head>
 <body>
+    <header>
+        <h1>BreadCorp Insurance</h1>
+        <p>Providing safety and security for your Minecraft adventures!</p>
+    </header>
 
-<header>
-    <img src="breadlogo.png" alt="BreadCorp Insurance Logo" class="logo">
-    <h1>BreadCorp Insurance</h1>
-    <p>Providing safety and security for your Minecraft adventures!</p>
-</header>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="plans.html">Our Plans</a>
+        <a href="contact.html">Contact</a>
+    </nav>
 
-<nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="plans.html">Our Plans</a>
-    <a href="contact.html">Contact</a>
-</nav>
-
-<section class="plans-section">
     <h2>Our Plans</h2>
-
-    <!-- Wood Tier -->
-    <div class="plan-card">
-        <h3>Wood Tier - 15 Diamonds</h3>
-        <p>The Basic Plan for those who need some protection without fancy upgrades. This is a no-frills package, but it covers the basics.</p>
-        <ul>
-            <li>Basic unenchanted armor</li>
-        </ul>
-        <div class="buy-container">
-            <button class="buy-button" onclick="buyPlan('Wood')">Buy Wood Tier</button>
+    <section>
+        <!-- Plan 1: Wood -->
+        <div class="plan">
+            <h3>Wood Tier</h3>
+            <p>The basic package with unenchanted armor. Perfect for new adventurers.</p>
+            <p><strong>Price:</strong> 15 Diamonds</p>
+            <form id="wood-form">
+                <input type="hidden" name="plan" value="Wood">
+                <label for="wood-ign">In-Game Name (IGN):</label>
+                <input type="text" id="wood-ign" name="ign" required>
+                <label for="wood-location">Delivery Location:</label>
+                <input type="text" id="wood-location" name="location" required>
+                <input type="submit" value="Buy Plan">
+            </form>
         </div>
-    </div>
 
-    <!-- Iron Tier -->
-    <div class="plan-card">
-        <h3>Iron Tier - 35 Diamonds</h3>
-        <p>A step up from the Wood Tier. With this plan, you’ll get enchanted armor that offers some solid protection for your adventures.</p>
-        <ul>
-            <li>Helmet: Protection IV</li>
-            <li>&nbsp;&nbsp;&nbsp;| Unbreaking III</li>
-            <li>Chestplate: Protection IV</li>
-            <li>&nbsp;&nbsp;&nbsp;| Unbreaking III</li>
-            <li>Leggings: Protection IV</li>
-            <li>&nbsp;&nbsp;&nbsp;| Unbreaking III</li>
-            <li>Boots: Protection IV</li>
-            <li>&nbsp;&nbsp;&nbsp;| Unbreaking III</li>
-        </ul>
-        <div class="buy-container">
-            <button class="buy-button" onclick="buyPlan('Iron')">Buy Iron Tier</button>
+        <!-- Plan 2: Iron -->
+        <div class="plan">
+            <h3>Iron Tier</h3>
+            <p>Armor with Protection 4 and Unbreaking 3. Reliable and tough.</p>
+            <p><strong>Price:</strong> 35 Diamonds</p>
+            <form id="iron-form">
+                <input type="hidden" name="plan" value="Iron">
+                <label for="iron-ign">In-Game Name (IGN):</label>
+                <input type="text" id="iron-ign" name="ign" required>
+                <label for="iron-location">Delivery Location:</label>
+                <input type="text" id="iron-location" name="location" required>
+                <input type="submit" value="Buy Plan">
+            </form>
         </div>
-    </div>
 
-    <!-- Diamond Tier -->
-    <div class="plan-card">
-        <h3>Diamond Tier - 80 Diamonds</h3>
-        <p>This plan gives you top-tier armor, an Elytra for flying, rockets to get around, and food to keep you well-fed during your adventures. Perfect for the serious adventurer!</p>
-        <ul>
-            <li>Helmet: Protection IV</li>
-            <li>&nbsp;&nbsp;&nbsp;| Unbreaking III</li>
-            <li>&nbsp;&nbsp;&nbsp;| Mending</li>
-            <li>&nbsp;&nbsp;&nbsp;| Thorns III (Optional)</li>
-
-            <li>Chestplate: Protection IV</li>
-            <li>&nbsp;&nbsp;&nbsp;| Unbreaking III</li>
-            <li>&nbsp;&nbsp;&nbsp;| Mending</li>
-            <li>&nbsp;&nbsp;&nbsp;| Thorns III (Optional)</li>
-
-            <li>Leggings: Protection IV</li>
-            <li>&nbsp;&nbsp;&nbsp;| Unbreaking III</li>
-            <li>&nbsp;&nbsp;&nbsp;| Mending</li>
-            <li>&nbsp;&nbsp;&nbsp;| Thorns III (Optional)</li>
-
-            <li>Boots: Protection IV</li>
-            <li>&nbsp;&nbsp;&nbsp;| Unbreaking III</li>
-            <li>&nbsp;&nbsp;&nbsp;| Mending</li>
-            <li>&nbsp;&nbsp;&nbsp;| Thorns III (Optional)</li>
-
-            <li>Elytra (for flying)</li>
-            <li>32 Firework Rockets (for Elytra use)</li>
-            <li>64 Cooked Beef (for food)</li>
-        </ul>
-        <div class="buy-container">
-            <button class="buy-button" onclick="buyPlan('Diamond')">Buy Diamond Tier</button>
+        <!-- Plan 3: Diamond -->
+        <div class="plan">
+            <h3>Diamond Tier</h3>
+            <p>Perfect armor, Elytra, rockets, and food. Everything you need.</p>
+            <p><strong>Price:</strong> 80 Diamonds</p>
+            <form id="diamond-form">
+                <input type="hidden" name="plan" value="Diamond">
+                <label for="diamond-ign">In-Game Name (IGN):</label>
+                <input type="text" id="diamond-ign" name="ign" required>
+                <label for="diamond-location">Delivery Location:</label>
+                <input type="text" id="diamond-location" name="location" required>
+                <input type="submit" value="Buy Plan">
+            </form>
         </div>
-    </div>
 
-    <!-- Netherite Tier -->
-    <div class="plan-card">
-        <h3>Netherite Tier - 140 Diamonds</h3>
-        <p>The ultimate protection package. The Netherite gear is the best available, and this plan includes all the perks of the Diamond Tier with an upgrade to the strongest gear available in Minecraft.</p>
-        <ul>
-            <li>Helmet: Protection IV</li>
-            <li>&nbsp;&nbsp;&nbsp;| Unbreaking III</li>
-            <li>&nbsp;&nbsp;&nbsp;| Mending</li>
-            <li>&nbsp;&nbsp;&nbsp;| Thorns III (Optional)</li>
-
-            <li>Chestplate: Protection IV</li>
-            <li>&nbsp;&nbsp;&nbsp;| Unbreaking III</li>
-            <li>&nbsp;&nbsp;&nbsp;| Mending</li>
-            <li>&nbsp;&nbsp;&nbsp;| Thorns III (Optional)</li>
-
-            <li>Leggings: Protection IV</li>
-            <li>&nbsp;&nbsp;&nbsp;| Unbreaking III</li>
-            <li>&nbsp;&nbsp;&nbsp;| Mending</li>
-            <li>&nbsp;&nbsp;&nbsp;| Thorns III (Optional)</li>
-
-            <li>Boots: Protection IV</li>
-            <li>&nbsp;&nbsp;&nbsp;| Unbreaking III</li>
-            <li>&nbsp;&nbsp;&nbsp;| Mending</li>
-            <li>&nbsp;&nbsp;&nbsp;| Thorns III (Optional)</li>
-
-            <li>Diamond Sword: Sharpness V</li>
-            <li>&nbsp;&nbsp;&nbsp;| Unbreaking III</li>
-            <li>&nbsp;&nbsp;&nbsp;| Knockback II (Optional)</li>
-            <li>&nbsp;&nbsp;&nbsp;| Fire Aspect II (Optional)</li>
-
-            <li>Elytra (for flying)</li>
-            <li>32 Firework Rockets (for Elytra use)</li>
-            <li>64 Cooked Beef (for food)</li>
-        </ul>
-        <div class="buy-container">
-            <button class="buy-button" onclick="buyPlan('Netherite')">Buy Netherite Tier</button>
+        <!-- Plan 4: Netherite -->
+        <div class="plan">
+            <h3>Netherite Tier</h3>
+            <p>Everything in the Diamond Tier, but fully upgraded with Netherite gear.</p>
+            <p><strong>Price:</strong> 140 Diamonds</p>
+            <form id="netherite-form">
+                <input type="hidden" name="plan" value="Netherite">
+                <label for="netherite-ign">In-Game Name (IGN):</label>
+                <input type="text" id="netherite-ign" name="ign" required>
+                <label for="netherite-location">Delivery Location:</label>
+                <input type="text" id="netherite-location" name="location" required>
+                <input type="submit" value="Buy Plan">
+            </form>
         </div>
-    </div>
-</section>
+    </section>
 
-<footer>
-    <p>&copy; 2024 BreadCorp Insurance. All rights reserved.</p>
-</footer>
+    <footer>
+        <p>&copy; 2024 BreadCorp Insurance. All rights reserved.</p>
+    </footer>
 
+    <script>
+        document.querySelectorAll("form").forEach(form => {
+            form.addEventListener("submit", function (event) {
+                event.preventDefault();
+
+                const ign = this.querySelector("[name='ign']").value;
+                const location = this.querySelector("[name='location']").value;
+                const plan = this.querySelector("[name='plan']").value;
+
+                const nzDate = new Date().toLocaleString("en-NZ", { timeZone: "Pacific/Auckland" });
+                const orders = JSON.parse(localStorage.getItem("orders")) || [];
+                const orderNumber = orders.length + 1;
+                const uniqueId = `Order-${orderNumber}-${nzDate}`;
+
+                const newOrder = { uniqueId, ign, location, plan, orderNumber, date: nzDate };
+                orders.push(newOrder);
+                localStorage.setItem("orders", JSON.stringify(orders));
+
+                alert(`Order placed! ID: ${uniqueId}`);
+            });
+        });
+    </script>
 </body>
 </html>
