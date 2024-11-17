@@ -40,6 +40,22 @@ function initializeForms() {
     handleFormSubmission("diamond-form", "Diamond");
     handleFormSubmission("netherite-form", "Netherite");
 }
+document.addEventListener("DOMContentLoaded", function () {
+    try {
+        // Test localStorage
+        localStorage.setItem("test", "test");
+        localStorage.removeItem("test");
+        console.log("localStorage is accessible.");
+    } catch (error) {
+        console.error("localStorage is not accessible:", error);
+        alert("localStorage is disabled or inaccessible. Please enable it in your browser.");
+        return;
+    }
+
+    // Initialize forms
+    initializeForms();
+});
+
 
 // Run the initialization on page load
 document.addEventListener("DOMContentLoaded", initializeForms);
