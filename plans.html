@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BreadCorp Insurance</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>
+    <img src="breadlogo.png" alt="BreadCorp Insurance Logo" class="logo">
+    <h1>BreadCorp Insurance</h1>
+    <p>Providing safety and security for your Minecraft adventures!</p>
+</header>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="plans.html">Our Plans</a>
+    <a href="contact.html">Contact</a>
+</nav>
+
+<section class="plans-section">
+    <h2>Our Plans</h2>
+
+    <!-- Wood Tier -->
+    <div class="plan-card">
+        <h3>Wood Tier - 15 Diamonds</h3>
+        <p>The Basic Plan for those who need some protection without fancy upgrades. This is a no-frills package, but it covers the basics.</p>
+        <ul>
+            <li>Basic unenchanted armor</li>
+        </ul>
+        <div class="buy-container">
+            <button class="buy-button" onclick="buyPlan('Wood')">Buy Wood Tier</button>
+        </div>
+    </div>
+
+    <!-- Iron Tier -->
+    <div class="plan-card">
+        <h3>Iron Tier - 35 Diamonds</h3>
+        <p>A step up from the Wood Tier. With this plan, you’ll get enchanted armor that offers some solid protection for your adventures.</p>
+        <ul>
+            <li>Helmet: Protection IV</li>
+            <li>&nbsp;&nbsp;&nbsp;| Unbreaking III</li>
+            <li>Chestplate: Protection IV</li>
+            <li>&nbsp;&nbsp;&nbsp;| Unbreaking III</li>
+            <li>Leggings: Protection IV</li>
+            <li>&nbsp;&nbsp;&nbsp;| Unbreaking III</li>
+            <li>Boots: Protection IV</li>
+            <li>&nbsp;&nbsp;&nbsp;| Unbreaking III</li>
+        </ul>
+        <div class="buy-container">
+            <button class="buy-button" onclick="buyPlan('Iron')">Buy Iron Tier</button>
+        </div>
+    </div>
+
+    <!-- Diamond Tier -->
+    <div class="plan-card">
+        <h3>Diamond Tier - 80 Diamonds</h3>
+        <p>This plan gives you top-tier armor, an Elytra for flying, rockets to get around, and food to keep you well-fed during your adventures. Perfect for the serious adventurer!</p>
+        <ul>
+            <li>Helmet: Protection IV</li>
+            <li>&nbsp;&nbsp;&nbsp;| Unbreaking III</li>
+            <li>&nbsp;&nbsp;&nbsp;| Mending</li>
+            <li>&nbsp;&nbsp;&nbsp;| Thorns III (Optional)</li>
+
+            <li>Chestplate: Protection IV</li>
+            <li>&nbsp;&nbsp;&nbsp;| Unbreaking III</li>
+            <li>&nbsp;&nbsp;&nbsp;| Mending</li>
+            <li>&nbsp;&nbsp;&nbsp;| Thorns III (Optional)</li>
+
+            <li>Leggings: Protection IV</li>
+            <li>&nbsp;&nbsp;&nbsp;| Unbreaking III</li>
+            <li>&nbsp;&nbsp;&nbsp;| Mending</li>
+            <li>&nbsp;&nbsp;&nbsp;| Thorns III (Optional)</li>
+
+            <li>Boots: Protection IV</li>
+            <li>&nbsp;&nbsp;&nbsp;| Unbreaking III</li>
+            <li>&nbsp;&nbsp;&nbsp;| Mending</li>
+            <li>&nbsp;&nbsp;&nbsp;| Thorns III (Optional)</li>
+
+            <li>Elytra (for flying)</li>
+            <li>32 Firework Rockets (for Elytra use)</li>
+            <li>64 Cooked Beef (for food)</li>
+        </ul>
+        <div class="buy-container">
+            <button class="buy-button" onclick="buyPlan('Diamond')">Buy Diamond Tier</button>
+        </div>
+    </div>
+
+    <!-- Netherite Tier -->
+    <div class="plan-card">
+        <h3>Netherite Tier - 140 Diamonds</h3>
+        <p>The ultimate protection package. The Netherite gear is the best available, and this plan includes all the perks of the Diamond Tier with an upgrade to the strongest gear available in Minecraft.</p>
+        <ul>
+            <li>Helmet: Protection IV</li>
+            <li>&nbsp;&nbsp;&nbsp;| Unbreaking III</li>
+            <li>&nbsp;&nbsp;&nbsp;| Mending</li>
+            <li>&nbsp;&nbsp;&nbsp;| Thorns III (Optional)</li>
+
+            <li>Chestplate: Protection IV</li>
+            <li>&nbsp;&nbsp;&nbsp;| Unbreaking III</li>
+            <li>&nbsp;&nbsp;&nbsp;| Mending</li>
+            <li>&nbsp;&nbsp;&nbsp;| Thorns III (Optional)</li>
+
+            <li>Leggings: Protection IV</li>
+            <li>&nbsp;&nbsp;&nbsp;| Unbreaking III</li>
+            <li>&nbsp;&nbsp;&nbsp;| Mending</li>
+            <li>&nbsp;&nbsp;&nbsp;| Thorns III (Optional)</li>
+
+            <li>Boots: Protection IV</li>
+            <li>&nbsp;&nbsp;&nbsp;| Unbreaking III</li>
+            <li>&nbsp;&nbsp;&nbsp;| Mending</li>
+            <li>&nbsp;&nbsp;&nbsp;| Thorns III (Optional)</li>
+
+            <li>Diamond Sword: Sharpness V</li>
+            <li>&nbsp;&nbsp;&nbsp;| Unbreaking III</li>
+            <li>&nbsp;&nbsp;&nbsp;| Knockback II (Optional)</li>
+            <li>&nbsp;&nbsp;&nbsp;| Fire Aspect II (Optional)</li>
+
+            <li>Elytra (for flying)</li>
+            <li>32 Firework Rockets (for Elytra use)</li>
+            <li>64 Cooked Beef (for food)</li>
+        </ul>
+        <div class="buy-container">
+            <button class="buy-button" onclick="buyPlan('Netherite')">Buy Netherite Tier</button>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <p>&copy; 2024 BreadCorp Insurance. All rights reserved.</p>
+</footer>
+
+</body>
+</html>

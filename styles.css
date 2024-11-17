@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
+/* General Styles */
+body {
+    font-family: Merriweather;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #8f7d52;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+header img.logo {
+    max-width: 100px;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+h1 {
+    font-size: 2.5em;
+    margin: 10px 0;
+}
+
+p {
+    font-size: 1.2em;
+    margin: 0;
+}
+
+nav {
+    background-color: #8f7d52;
+    text-align: center;
+    padding: 10px 0;
+}
+
+nav a {
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-size: 1.2em;
+}
+
+nav a:hover {
+    background-color: #5a4d31;
+}
+
+section.plans-section {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.plan-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    margin: 20px 0;
+    padding: 20px;
+    text-align: left;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.plan-card h3 {
+    font-size: 1.8em;
+    color: #333;
+}
+
+ul {
+    list-style-type: none;
+    padding-left: 0;
+    text-align: left;
+}
+
+ul li {
+    margin: 5px 0;
+    color: #666;
+}
+
+ul li:first-child {
+    font-weight: bold; /* Bold the first line for better readability */
+}
+
+ul li:not(:first-child) {
+    padding-left: 20px; /* Indentation for subsequent enchantments */
+}
+
+.buy-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.buy-button {
+    background-color: #8f7d52;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.buy-button:hover {
+    background-color: #5a4d31;
+}
+
+footer {
+    background-color: #8f7d52;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+h2{
+    padding-left: 0.5em;
+}
+p { 
+    padding-left: 0.5em;
+}
+h3 {
+    padding-left: 0.5em;
+}
+form {
+    padding-left: 0.5em;
+}
