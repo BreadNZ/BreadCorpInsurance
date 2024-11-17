@@ -1,61 +1,83 @@
-// Helper function to create unique order IDs
+console.log("scripts.js is loaded and running!");
+
+// Helper function to create a unique order ID
 function generateUniqueId(orderNumber) {
     const nzDate = new Date().toLocaleString("en-NZ", { timeZone: "Pacific/Auckland" });
     return `Order-${orderNumber}-${nzDate}`;
 }
 
 // Function to handle form submission
-function handleFormSubmission(formId, planName) {
+function buyPlan(planName) {
+    console.log(`Buying plan: ${planName}`);
+
+    // Get the form associated with the plan
+    const formId = `${planName.toLowerCase()}-form`;
     const form = document.getElementById(formId);
 
+    if (!form) {
+        console.error(`Form with ID '${formId}' not found.`);
+        return;
+    }
+
+    // Prevent default form submission
     form.addEventListener("submit", function (event) {
         event.preventDefault();
 
-        // Get form values
+        // Collect form values
         const ign = this.querySelector("[name='ign']").value;
         const location = this.querySelector("[name='location']").value;
+        const thorns = this.querySelector("[name='thorns']")?.value || "N/A";
+        const knockback = this.querySelector("[name='knockback']")?.value || "N/A";
+        const fireaspect = this.querySelector("[name='fireaspect']")?.value || "N/A";
 
-        // Generate a unique order ID
+        // Load existing orders or initialize an empty array
         const orders = JSON.parse(localStorage.getItem("orders")) || [];
         const orderNumber = orders.length + 1;
         const uniqueId = generateUniqueId(orderNumber);
 
         // Create a new order object
-        const newOrder = { uniqueId, ign, location, plan: planName, orderNumber, date: new Date().toISOString() };
-        orders.push(newOrder);
+        const newOrder = {
+            uniqueId,
+            ign,
+            location,
+            plan: planName,
+            thorns,
+            knockback,
+            fireaspect,
+            orderNumber,
+            date: new Date().toISOString(),
+        };
 
-        // Store the orders in localStorage
+        // Save the order
+        orders.push(newOrder);
         localStorage.setItem("orders", JSON.stringify(orders));
 
-        // Notify the user
+        console.log("New order stored:", newOrder);
         alert(`Order placed successfully! Your unique ID is: ${uniqueId}`);
         form.reset();
     });
 }
 
-// Initialize event listeners for all forms
+// Attach event listeners to all forms
 function initializeForms() {
-    handleFormSubmission("wood-form", "Wood");
-    handleFormSubmission("iron-form", "Iron");
-    handleFormSubmission("diamond-form", "Diamond");
-    handleFormSubmission("netherite-form", "Netherite");
+    const planNames = ["Wood", "Iron", "Diamond", "Netherite"];
+
+    planNames.forEach(planName => {
+        const formId = `${planName.toLowerCase()}-form`;
+        const form = document.getElementById(formId);
+
+        if (!form) {
+            console.warn(`Form with ID '${formId}' not found. Skipping.`);
+            return;
+        }
+
+        form.addEventListener("submit", function (event) {
+            event.preventDefault();
+            buyPlan(planName);
+        });
+    });
 }
-document.addEventListener("DOMContentLoaded", function () {
-    try {
-        // Test localStorage
-        localStorage.setItem("test", "test");
-        localStorage.removeItem("test");
-        console.log("localStorage is accessible.");
-    } catch (error) {
-        console.error("localStorage is not accessible:", error);
-        alert("localStorage is disabled or inaccessible. Please enable it in your browser.");
-        return;
-    }
 
-    // Initialize forms
-    initializeForms();
-});
-
-
-// Run the initialization on page load
+// Initialize on DOMContentLoaded
 document.addEventListener("DOMContentLoaded", initializeForms);
+
